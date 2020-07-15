@@ -1,0 +1,16 @@
+{
+  "content": [
+    {
+    "id":"value1",
+    "firstName":"value2",
+    "lastName":"bla",
+    "suspended":"false",
+    "position":"programmer"
+  }, {
+    "id":"value3",
+    "firstName":"value4",
+    "lastName":"bla",
+    "suspended":"false",
+    "position":"programmer"
+  }]
+}

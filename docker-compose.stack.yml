@@ -1,0 +1,19 @@
+version: '2.2'
+
+services:
+  marketplace-connector-usersync-sample:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - MVN_S3_INTERNAL_ACCESS_KEY
+      - MVN_S3_INTERNAL_SECRET_KEY
+    env_file:
+      - dev.stack.static.env
+      - dev.stack.local.env
+
+networks:
+  default:
+    external:
+      name: beekeeperstack_default
