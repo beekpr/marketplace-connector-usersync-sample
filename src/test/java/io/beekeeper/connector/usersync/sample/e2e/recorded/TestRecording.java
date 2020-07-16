@@ -15,11 +15,7 @@ public class TestRecording {
         final UserSyncRecorder userSyncRecorder = new UserSyncRecorder();
         final ExampleUserRestService sampleService = new ExampleUserRestService();
         sampleService.start();
-        final var tenantConfiguration = configuration(
-            sampleService.getBaseUrl(),
-            sampleService.getClientId(),
-            sampleService.getClientSecret()
-        );
+        final var tenantConfiguration = configuration(sampleService.getBaseUrl());
         System.out.println("port: " + sampleService.getBaseUrl());
 
         final UserSyncRecordingData userSyncRecordingData = UserSyncRecordingData.builder()
@@ -35,10 +31,13 @@ public class TestRecording {
         sampleService.stop();
     }
 
-    private static ConnectorConfigurationForTenant configuration(String baseUrl, String clientId, String clientSecret) {
+    private static ConnectorConfigurationForTenant configuration(String baseUrl) {
         final ConnectorConfigurationForTenant tenantConfiguration = new ConnectorConfigurationForTenant();
         tenantConfiguration.setProperty("baseUrl", baseUrl);
-        tenantConfiguration.setProperty("clientId", clientId);
+        tenantConfiguration.setProperty("clientId", ExampleUserRestService.CLIENT_ID);
+        String clientSecret = (System.getenv("SAMPLE_APP_SECRET") != null)
+            ? System.getenv("SAMPLE_APP_SECRET")
+            : System.getProperty("SAMPLE_APP_SECRET");
         tenantConfiguration.setProperty("clientSecret", clientSecret);
         return tenantConfiguration;
     }

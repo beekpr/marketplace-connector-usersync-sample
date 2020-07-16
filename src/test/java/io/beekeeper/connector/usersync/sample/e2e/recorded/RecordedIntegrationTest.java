@@ -23,11 +23,11 @@ public class RecordedIntegrationTest {
         assertThat(updateList).hasSize(2);
 
         final UserUpdate userUpdate = updateList.get(0);
-        assertThat(userUpdate.getExternalUserId()).isEqualTo("value1");
-        assertThat(userUpdate.getFirstName()).isEqualTo("value2");
-        assertThat(userUpdate.getLastName()).isEqualTo("bla");
-        assertThat(userUpdate.getLogin()).isEqualTo("value1");
-        assertThat(userUpdate.getPosition()).isEqualTo("programmer");
+        assertThat(userUpdate.getExternalUserId()).isEqualTo("someid");
+        assertThat(userUpdate.getFirstName()).isEqualTo("winnie");
+        assertThat(userUpdate.getLastName()).isEqualTo("thepooh");
+        assertThat(userUpdate.getLogin()).isEqualTo("someid");
+        assertThat(userUpdate.getPosition()).isEqualTo("teddybear");
         assertThat(userUpdate.isSuspended()).isFalse();
     }
 }

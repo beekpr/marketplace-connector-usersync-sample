@@ -1,16 +1,16 @@
 {
   "content": [
     {
-    "id":"value1",
-    "firstName":"value2",
-    "lastName":"bla",
+    "id":"someid",
+    "firstName":"winnie",
+    "lastName":"thepooh",
     "suspended":"false",
-    "position":"programmer"
+    "position":"teddybear"
   }, {
-    "id":"value3",
-    "firstName":"value4",
-    "lastName":"bla",
+    "id":"anotherid",
+    "firstName":"frodo",
+    "lastName":"baggins",
     "suspended":"false",
-    "position":"programmer"
+    "position":"hobbit"
   }]
 }

@@ -3,16 +3,15 @@ package io.beekeeper.connector.usersync.sample;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.github.tomakehurst.wiremock.extension.responsetemplating.ResponseTemplateTransformer;
 import io.beekeeper.marketplace.sdk.utils.http.oauth2.AccessToken;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 
+// this class is a mock of an external rest service
 public class ExampleUserRestService {
 
     public final static String CLIENT_ID = "6976";
-    public final static String CLIENT_SECRET = "9866";
     private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     private final WireMockServer wireMock;
@@ -27,7 +26,6 @@ public class ExampleUserRestService {
         wireMock = new WireMockServer(
                 options()
                     .dynamicPort()
-                    .extensions(new ResponseTemplateTransformer(false))
                     .withRootDirectory("src/test/resources/exampleUserRestService")
         );
         stubExternalApi();
@@ -47,14 +45,6 @@ public class ExampleUserRestService {
         return wireMock.baseUrl();
     }
 
-    public String getClientId() {
-        return CLIENT_ID;
-    }
-
-    public String getClientSecret() {
-        return CLIENT_SECRET;
-    }
-
     private void stubExternalApi() {
         wireMock.stubFor(
             get(urlPathEqualTo("/api/1/users"))
@@ -62,7 +52,6 @@ public class ExampleUserRestService {
                     aResponse()
                         .withStatus(200)
                         .withBodyFile("getUsersResponse.json")
-                        .withTransformers("response-template")
                 )
         );
     }

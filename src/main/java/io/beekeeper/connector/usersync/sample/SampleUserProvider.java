@@ -33,7 +33,12 @@ public class SampleUserProvider {
                 if (response.code() == 404) {
                     return Collections.emptyList();
                 }
-                throw new ImportProviderException("Fetching workers failed");
+                throw new ImportProviderException(
+                        "Fetching workers failed because of an error: "
+                            + response.errorBody().toString()
+                            + ", code: "
+                            + response.code()
+                );
             }
             final ResponseBody responseBody = response.body();
 
@@ -43,7 +48,7 @@ public class SampleUserProvider {
         } catch (OAuth2ProviderException e) {
             throw new ConfigurationException("Incorrect credentials", e);
         } catch (IOException e) {
-            throw new ImportProviderException("Fetching workers failed", e);
+            throw new ImportProviderException("Fetching users failed", e);
         }
     }
 }

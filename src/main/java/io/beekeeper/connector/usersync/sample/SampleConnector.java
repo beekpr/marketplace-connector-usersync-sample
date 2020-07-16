@@ -9,7 +9,8 @@ import io.beekeeper.integration.connector.api.exception.ConfigurationException;
 import io.beekeeper.integration.connector.api.exception.ImportProviderException;
 import io.beekeeper.integration.connector.usersync.api.*;
 
-import java.util.List;
+import java.util.Collection;
+
 
 public class SampleConnector implements UserImportConnector {
 
@@ -35,10 +36,8 @@ public class SampleConnector implements UserImportConnector {
 
         SampleUserProvider userProvider = new SampleUserProvider(sampleImportConfiguration);
 
-        List<SampleUser> userBatch;
-        if (!(userBatch = userProvider.fetchBatch()).isEmpty()) {
-            userBatch.forEach(observer::onNext);
-        }
+        // All users have to be sent to the observer
+        observer.onNext((Collection) userProvider.fetchBatch());
 
         return new UserImportResult();
     }
