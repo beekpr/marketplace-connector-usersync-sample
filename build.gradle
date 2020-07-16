@@ -26,9 +26,7 @@ sourceCompatibility = 1.11
 targetCompatibility = 1.11
 
 repositories {
-    mavenLocal()
     mavenCentral()
-    jcenter()
     maven { url "https://jitpack.io" }
     maven { url "https://dl.bintray.com/beekeeper/maven" }
     maven { url "https://clojars.org/repo" }
@@ -66,6 +64,7 @@ dependencies {
     testImplementation 'junit-addons:junit-addons:1.4'
     testImplementation 'com.github.tomakehurst:wiremock:2.26.0'
     testImplementation 'org.assertj:assertj-core:3.16.1'
+    testImplementation 'org.mockito:mockito-core:3.3.3'
 }
 
 dependencyCheck {

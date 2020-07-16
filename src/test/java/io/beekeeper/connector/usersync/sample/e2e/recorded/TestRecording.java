@@ -8,6 +8,7 @@ import io.beekeeper.integration.test.recording.UserSyncRecorder;
 import io.beekeeper.integration.test.recording.UserSyncRecordingData;
 
 import java.nio.file.Path;
+import java.util.Optional;
 
 public class TestRecording {
 
@@ -16,7 +17,6 @@ public class TestRecording {
         final ExampleUserRestService sampleService = new ExampleUserRestService();
         sampleService.start();
         final var tenantConfiguration = configuration(sampleService.getBaseUrl());
-        System.out.println("port: " + sampleService.getBaseUrl());
 
         final UserSyncRecordingData userSyncRecordingData = UserSyncRecordingData.builder()
             .outputPath(Path.of("src/test/resources"))
@@ -35,9 +35,8 @@ public class TestRecording {
         final ConnectorConfigurationForTenant tenantConfiguration = new ConnectorConfigurationForTenant();
         tenantConfiguration.setProperty("baseUrl", baseUrl);
         tenantConfiguration.setProperty("clientId", ExampleUserRestService.CLIENT_ID);
-        String clientSecret = (System.getenv("SAMPLE_APP_SECRET") != null)
-            ? System.getenv("SAMPLE_APP_SECRET")
-            : System.getProperty("SAMPLE_APP_SECRET");
+        String clientSecret = Optional.ofNullable(System.getenv("SAMPLE_APP_SECRET"))
+            .orElse(System.getProperty("SAMPLE_APP_SECRET"));
         tenantConfiguration.setProperty("clientSecret", clientSecret);
         return tenantConfiguration;
     }

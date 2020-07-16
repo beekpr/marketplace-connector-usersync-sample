@@ -1,11 +1,11 @@
 {
-  "id" : "6105a44c-6bdd-4f0e-b39a-1064b23fe177",
+  "id" : "f146d233-64c6-4e68-893a-5b30ce3fb522",
   "name" : "auth_oauth_v2_token",
   "request" : {
     "url" : "/auth/oauth/v2/token",
     "method" : "POST",
     "bodyPatterns" : [ {
-      "equalTo" : "client_id=6976&client_secret=38fa7b04-d613-49dc-ae2f-df4edfa737d5&grant_type=client_credentials",
+      "equalTo" : "client_id=6976&client_secret=1e0d2a66-ada8-4cbf-8a5f-bb5f353dffd9&grant_type=client_credentials",
       "caseInsensitive" : false
     } ]
   },
@@ -14,12 +14,12 @@
     "body" : "{\"access_token\":\"my-fun-token\",\"token_type\":\"elo\",\"expires_in\":null,\"refresh_token\":null}",
     "headers" : {
       "Content-Type" : "application/json",
-      "Matched-Stub-Id" : "3628876c-55cf-4b2f-ac38-cac97b2c69a1",
+      "Matched-Stub-Id" : "85ade759-1ee3-4d97-9af9-0615fa078236",
       "Vary" : "Accept-Encoding, User-Agent",
       "Server" : "Jetty(9.2.28.v20190418)"
     }
   },
-  "uuid" : "6105a44c-6bdd-4f0e-b39a-1064b23fe177",
+  "uuid" : "f146d233-64c6-4e68-893a-5b30ce3fb522",
   "persistent" : true,
   "insertionIndex" : 1
 }

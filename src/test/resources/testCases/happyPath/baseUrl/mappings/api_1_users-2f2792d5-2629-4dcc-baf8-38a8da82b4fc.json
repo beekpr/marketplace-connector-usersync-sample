@@ -1,5 +1,5 @@
 {
-  "id" : "e8941628-1efe-469b-aaec-963ebd33627c",
+  "id" : "2f2792d5-2629-4dcc-baf8-38a8da82b4fc",
   "name" : "api_1_users",
   "request" : {
     "url" : "/api/1/users",
@@ -9,12 +9,12 @@
     "status" : 200,
     "base64Body" : "ewogICJjb250ZW50IjogWwogICAgewogICAgImlkIjoic29tZWlkIiwKICAgICJmaXJzdE5hbWUiOiJ3aW5uaWUiLAogICAgImxhc3ROYW1lIjoidGhlcG9vaCIsCiAgICAic3VzcGVuZGVkIjoiZmFsc2UiLAogICAgInBvc2l0aW9uIjoidGVkZHliZWFyIgogIH0sIHsKICAgICJpZCI6ImFub3RoZXJpZCIsCiAgICAiZmlyc3ROYW1lIjoiZnJvZG8iLAogICAgImxhc3ROYW1lIjoiYmFnZ2lucyIsCiAgICAic3VzcGVuZGVkIjoiZmFsc2UiLAogICAgInBvc2l0aW9uIjoiaG9iYml0IgogIH1dCn0=",
     "headers" : {
-      "Matched-Stub-Id" : "b1c323f2-3c2d-4cd6-acf9-0b62b1437d6c",
+      "Matched-Stub-Id" : "c09a0128-1af9-42bf-acf8-6e7954f1e7d4",
       "Vary" : "Accept-Encoding, User-Agent",
       "Server" : "Jetty(9.2.28.v20190418)"
     }
   },
-  "uuid" : "e8941628-1efe-469b-aaec-963ebd33627c",
+  "uuid" : "2f2792d5-2629-4dcc-baf8-38a8da82b4fc",
   "persistent" : true,
   "insertionIndex" : 2
 }

@@ -34,10 +34,12 @@ public class SampleUserProvider {
                     return Collections.emptyList();
                 }
                 throw new ImportProviderException(
-                        "Fetching workers failed because of an error: "
-                            + response.errorBody().toString()
-                            + ", code: "
-                            + response.code()
+                        String.format(
+                            "Fetching workers failed because of an error: {} , code: {} "
+                                + response.errorBody().toString()
+                                +
+                                +response.code()
+                        )
                 );
             }
             final ResponseBody responseBody = response.body();
