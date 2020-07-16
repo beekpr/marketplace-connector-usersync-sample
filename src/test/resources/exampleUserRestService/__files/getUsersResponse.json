@@ -1,0 +1,16 @@
+{
+  "content": [
+    {
+    "id":"someid",
+    "firstName":"winnie",
+    "lastName":"thepooh",
+    "suspended":"false",
+    "position":"teddybear"
+  }, {
+    "id":"anotherid",
+    "firstName":"frodo",
+    "lastName":"baggins",
+    "suspended":"false",
+    "position":"hobbit"
+  }]
+}

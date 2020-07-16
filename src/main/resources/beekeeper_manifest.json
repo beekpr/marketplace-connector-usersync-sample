@@ -1,0 +1,18 @@
+{
+  "connectorFullClassName" : "io.beekeeper.connector.usersync.sample.SampleConnector",
+  "globalParameters": [],
+  "tenantParameters": [
+    {
+      "name": "baseUrl",
+      "description": "Sample User Sync REST API base URL"
+    },
+    {
+      "name": "clientId",
+      "description": "API OAuth Client ID"
+    },
+    {
+      "name": "clientSecret",
+      "description": "API OAuth Client Secret"
+    }
+  ]
+}
