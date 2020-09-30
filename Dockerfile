@@ -12,7 +12,7 @@ WORKDIR /home/gradle/src
 RUN --mount=type=cache,target=/home/gradle/.gradle gradle --parallel -S --no-daemon distTar
 
 ## Build production image with only outputs
-FROM quay.io/beekeeper/integration-connector-base:0.1.1
+FROM quay.io/beekeeper/integration-connector-base:0.1.2
 
 LABEL Description="Sample User Sync Connector"
 
