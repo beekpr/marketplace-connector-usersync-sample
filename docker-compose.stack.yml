@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   marketplace-connector-usersync-sample:
-    restart: always
+    restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
