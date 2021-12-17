@@ -24,6 +24,7 @@ public class TestRecording {
             .globalConfiguration(new GlobalConfiguration())
             .tenantConfiguration(tenantConfiguration)
             .tenantPropertyToAnonymize("clientSecret")
+            .tenantUrlPropertyName("baseUrl")
             .build();
 
         final SampleConnector connector = new SampleConnector();
