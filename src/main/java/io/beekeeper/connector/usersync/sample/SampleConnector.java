@@ -9,7 +9,6 @@ import io.beekeeper.integration.connector.api.exception.ConfigurationException;
 import io.beekeeper.integration.connector.api.exception.ImportProviderException;
 import io.beekeeper.integration.connector.usersync.api.*;
 
-
 public class SampleConnector implements UserImportConnector {
 
     private final ObjectMapper objectMapper;
@@ -20,7 +19,6 @@ public class SampleConnector implements UserImportConnector {
 
     @Override
     public void initialize(GlobalConfiguration globalConfiguration) {
-
     }
 
     @Override

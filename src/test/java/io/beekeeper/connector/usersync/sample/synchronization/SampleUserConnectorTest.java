@@ -21,7 +21,6 @@ import static org.mockito.Mockito.*;
 
 public class SampleUserConnectorTest {
 
-
     @Rule
     public WireMockRule wireMockRule = new WireMockRule(wireMockConfig().port(9000), false);
 

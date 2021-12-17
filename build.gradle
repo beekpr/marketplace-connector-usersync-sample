@@ -13,7 +13,7 @@ plugins {
     id 'java-library'  // Important must be java-library, otherwise maven-publish does not add resources to artifact jar
     id 'maven-publish'
     id 'io.franzbecker.gradle-lombok' version '3.3.0'
-    id 'io.beekeeper.gradle.plugin' version '0.8.2'
+    id 'io.beekeeper.gradle.plugin' version '0.9.23'
 }
 
 apply plugin: 'io.beekeeper.integration.connector'
@@ -27,7 +27,6 @@ targetCompatibility = 1.11
 
 repositories {
     mavenCentral()
-    maven { url "https://dl.bintray.com/beekeeper/maven" }
     maven { url "https://clojars.org/repo" }
     maven { url 'https://s3-eu-west-1.amazonaws.com/beekeeper-marketplace-sdk/maven2/release/' }
 }

@@ -40,7 +40,6 @@ public class ExampleUserRestService {
         wireMock.stop();
     }
 
-
     public String getBaseUrl() {
         return wireMock.baseUrl();
     }
