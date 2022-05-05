@@ -7,7 +7,11 @@ import io.beekeeper.integration.connector.api.config.ConnectorConfigurationForTe
 import io.beekeeper.integration.connector.api.config.GlobalConfiguration;
 import io.beekeeper.integration.connector.api.exception.ConfigurationException;
 import io.beekeeper.integration.connector.api.exception.ImportProviderException;
-import io.beekeeper.integration.connector.usersync.api.*;
+import io.beekeeper.integration.connector.usersync.api.ConnectorDefaultMapping;
+import io.beekeeper.integration.connector.usersync.api.UserImportConfiguration;
+import io.beekeeper.integration.connector.usersync.api.UserImportConnector;
+import io.beekeeper.integration.connector.usersync.api.UserImportObserver;
+import io.beekeeper.integration.connector.usersync.api.UserImportResult;
 
 public class SampleConnector implements UserImportConnector {
 

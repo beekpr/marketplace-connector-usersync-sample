@@ -1,13 +1,14 @@
 package io.beekeeper.connector.usersync.sample.e2e.recorded;
 
-import io.beekeeper.connector.usersync.sample.SampleConnector;
-import io.beekeeper.integration.test.UserUpdate;
-import io.beekeeper.integration.test.WrapperTestSupport;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
+
+import io.beekeeper.connector.usersync.sample.SampleConnector;
+import io.beekeeper.integration.test.UserUpdate;
+import io.beekeeper.integration.test.WrapperTestSupport;
 
 public class RecordedIntegrationTest {
     @Test

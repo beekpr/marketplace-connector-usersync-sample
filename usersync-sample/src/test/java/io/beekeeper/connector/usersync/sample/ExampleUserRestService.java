@@ -3,10 +3,10 @@ package io.beekeeper.connector.usersync.sample;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.WireMockServer;
-import io.beekeeper.marketplace.sdk.utils.http.oauth2.AccessToken;
+import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.*;
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
+import io.beekeeper.marketplace.sdk.utils.http.oauth2.AccessToken;
 
 // this class is a mock of an external rest service
 public class ExampleUserRestService {
@@ -24,7 +24,7 @@ public class ExampleUserRestService {
 
     public ExampleUserRestService() throws JsonProcessingException {
         wireMock = new WireMockServer(
-                options()
+                WireMockConfiguration.options()
                     .dynamicPort()
                     .withRootDirectory("src/test/resources/exampleUserRestService")
         );
@@ -46,9 +46,9 @@ public class ExampleUserRestService {
 
     private void stubExternalApi() {
         wireMock.stubFor(
-            get(urlPathEqualTo("/api/1/users"))
+            WireMock.get(WireMock.urlPathEqualTo("/api/1/users"))
                 .willReturn(
-                    aResponse()
+                    WireMock.aResponse()
                         .withStatus(200)
                         .withBodyFile("getUsersResponse.json")
                 )
@@ -62,9 +62,9 @@ public class ExampleUserRestService {
             .build();
 
         wireMock.stubFor(
-            post(urlEqualTo("/auth/oauth/v2/token"))
+            WireMock.post(WireMock.urlEqualTo("/auth/oauth/v2/token"))
                 .willReturn(
-                    aResponse()
+                    WireMock.aResponse()
                         .withStatus(200)
                         .withHeader("Content-Type", "application/json")
                         .withBody(OBJECT_MAPPER.writeValueAsString(token))
