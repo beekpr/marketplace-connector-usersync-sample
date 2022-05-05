@@ -1,10 +1,15 @@
 package io.beekeeper.connector.usersync.sample;
 
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.post;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
+import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.github.tomakehurst.wiremock.client.WireMock;
-import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 
 import io.beekeeper.marketplace.sdk.utils.http.oauth2.AccessToken;
 
@@ -24,7 +29,7 @@ public class ExampleUserRestService {
 
     public ExampleUserRestService() throws JsonProcessingException {
         wireMock = new WireMockServer(
-                WireMockConfiguration.options()
+                options()
                     .dynamicPort()
                     .withRootDirectory("src/test/resources/exampleUserRestService")
         );
@@ -46,9 +51,9 @@ public class ExampleUserRestService {
 
     private void stubExternalApi() {
         wireMock.stubFor(
-            WireMock.get(WireMock.urlPathEqualTo("/api/1/users"))
+            get(urlPathEqualTo("/api/1/users"))
                 .willReturn(
-                    WireMock.aResponse()
+                    aResponse()
                         .withStatus(200)
                         .withBodyFile("getUsersResponse.json")
                 )
@@ -62,9 +67,9 @@ public class ExampleUserRestService {
             .build();
 
         wireMock.stubFor(
-            WireMock.post(WireMock.urlEqualTo("/auth/oauth/v2/token"))
+            post(urlEqualTo("/auth/oauth/v2/token"))
                 .willReturn(
-                    WireMock.aResponse()
+                    aResponse()
                         .withStatus(200)
                         .withHeader("Content-Type", "application/json")
                         .withBody(OBJECT_MAPPER.writeValueAsString(token))
