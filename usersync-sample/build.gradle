@@ -1,0 +1,43 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+apply plugin: 'io.beekeeper.integration.connector'
+apply plugin: 'io.beekeeper.integration.connector-default-mapping'
+
+dependencies {
+    compileOnly 'com.google.code.findbugs:annotations:3.0.1'
+
+    implementation "io.beekeeper:connector-user-sync-api:$sdkVersion"
+
+    implementation 'io.beekeeper:marketplace-sdk-api:0.22.1'
+
+    // jackson
+    implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+
+    implementation 'org.apache.commons:commons-lang3:3.10'
+    implementation 'com.squareup.okhttp3:okhttp:4.7.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation group: 'com.squareup.retrofit2', name: 'converter-jackson', version: '2.9.0'
+
+    /*************************************************************/
+    // make this run > jdk9
+    implementation 'javax.xml.bind:jaxb-api:2.3.0'
+    implementation 'com.sun.xml.bind:jaxb-impl:2.3.0'
+    implementation 'com.sun.xml.bind:jaxb-core:2.3.0'
+    implementation 'javax.activation:activation:1.1.1'
+    implementation 'org.javassist:javassist:3.23.1-GA'
+
+    testImplementation "io.beekeeper:connector-test-sdk:${sdkVersion}"
+    testImplementation 'junit:junit:4.12'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.15.0'
+    testImplementation 'junit-addons:junit-addons:1.4'
+    testImplementation 'com.github.tomakehurst:wiremock:2.26.0'
+    testImplementation 'org.mockito:mockito-core:3.3.3'
+}

@@ -1,13 +1,19 @@
 package io.beekeeper.connector.usersync.sample.synchronization;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import io.beekeeper.marketplace.sdk.utils.http.oauth2.AccessToken;
-import lombok.AllArgsConstructor;
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.post;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 
 import java.io.IOException;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.beekeeper.marketplace.sdk.utils.http.oauth2.AccessToken;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Stub {

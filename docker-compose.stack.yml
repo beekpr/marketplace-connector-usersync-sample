@@ -6,9 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-      - MVN_S3_INTERNAL_ACCESS_KEY
-      - MVN_S3_INTERNAL_SECRET_KEY
     env_file:
       - dev.stack.static.env
       - dev.stack.local.env

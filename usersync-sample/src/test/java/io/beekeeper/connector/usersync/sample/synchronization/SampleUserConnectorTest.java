@@ -1,6 +1,19 @@
 package io.beekeeper.connector.usersync.sample.synchronization;
 
+import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+
+import java.util.List;
+
+import org.assertj.core.api.Assertions;
+import org.junit.Rule;
+import org.junit.Test;
+import org.mockito.ArgumentCaptor;
+
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
+
 import io.beekeeper.connector.usersync.sample.SampleConnector;
 import io.beekeeper.integration.connector.api.config.ConnectorConfigurationForTenant;
 import io.beekeeper.integration.connector.api.config.GlobalConfiguration;
@@ -9,15 +22,6 @@ import io.beekeeper.integration.connector.api.exception.ImportProviderException;
 import io.beekeeper.integration.connector.usersync.api.UserImportConfiguration;
 import io.beekeeper.integration.connector.usersync.api.UserImportObserver;
 import io.beekeeper.integration.connector.usersync.api.data.UserData;
-import org.assertj.core.api.Assertions;
-import org.junit.Rule;
-import org.junit.Test;
-import org.mockito.ArgumentCaptor;
-
-import java.util.List;
-
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
-import static org.mockito.Mockito.*;
 
 public class SampleUserConnectorTest {
 
