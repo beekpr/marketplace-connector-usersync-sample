@@ -6,9 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        - NEXUS_USERNAME
-        - NEXUS_PASSWORD
     env_file:
       - dev.stack.static.env
       - dev.stack.local.env

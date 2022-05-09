@@ -2,9 +2,6 @@
 # Build with multistage build on jdk-11
 FROM gradle:6.3.0-jdk11 as java_build
 
-ARG NEXUS_USERNAME
-ARG NEXUS_PASSWORD
-
 COPY --chown=gradle:gradle . /home/gradle/src
 
 WORKDIR /home/gradle/src
