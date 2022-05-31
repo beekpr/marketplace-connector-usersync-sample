@@ -31,7 +31,7 @@ public class ExampleUserRestService {
         wireMock = new WireMockServer(
                 options()
                     .dynamicPort()
-                    .withRootDirectory("src/test/resources/exampleUserRestService")
+                    .withRootDirectory("usersync-sample/src/test/resources/exampleUserRestService")
         );
         stubExternalApi();
         stubGetToken();
