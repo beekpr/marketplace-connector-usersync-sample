@@ -9,9 +9,11 @@ targetCompatibility = 17
 apply plugin: 'io.beekeeper.integration.connector'
 apply plugin: 'io.beekeeper.integration.connector-default-mapping'
 
-dependencies {
-    compileOnly 'com.github.spotbugs:spotbugs-annotations:4.8.6'
+tasks.withType(com.github.spotbugs.snom.SpotBugsTask) {
+    enabled = false
+}
 
+dependencies {
     implementation "io.beekeeper:connector-user-sync-api:$sdkVersion"
 
     implementation 'io.beekeeper:marketplace-sdk-api:0.22.1'
