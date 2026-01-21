@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1.0-experimental
-# Build with multistage build on jdk-11
-FROM gradle:6.3.0-jdk11 as java_build
+# Build with multistage build on jdk-17
+FROM gradle:7.6.0-jdk17 as java_build
 
 COPY --chown=gradle:gradle . /home/gradle/src
 
