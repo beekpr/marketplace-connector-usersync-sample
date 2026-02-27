@@ -8,7 +8,6 @@ services:
       dockerfile: Dockerfile
     env_file:
       - dev.stack.static.env
-      - dev.stack.local.env
 
 networks:
   default:
