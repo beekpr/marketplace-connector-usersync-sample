@@ -6,8 +6,8 @@ buildscript {
         maven {
             url 'https://nexus.internal.beekeeper.io/repository/beekeeper-maven-central/'
             credentials {
-                username = System.getenv('NEXUS_USERNAME') ?: (project.hasProperty('NEXUS_USERNAME') ? project.property('NEXUS_USERNAME') : "")
-                password = System.getenv('NEXUS_PASSWORD') ?: (project.hasProperty('NEXUS_PASSWORD') ? project.property('NEXUS_PASSWORD') : "")
+                username = System.env['NEXUS_USERNAME'] ?: "${NEXUS_USERNAME}"
+                password = System.env['NEXUS_PASSWORD'] ?: "${NEXUS_PASSWORD}"
             }
         }
     }
@@ -23,8 +23,8 @@ plugins {
 }
 
 ext {
-    nexusUsername = System.getenv('NEXUS_USERNAME') ?: (project.hasProperty('NEXUS_USERNAME') ? project.property('NEXUS_USERNAME') : "")
-    nexusPassword = System.getenv('NEXUS_PASSWORD') ?: (project.hasProperty('NEXUS_PASSWORD') ? project.property('NEXUS_PASSWORD') : "")
+    nexusUsername = System.env['NEXUS_USERNAME'] ?: "${NEXUS_USERNAME}"
+    nexusPassword = System.env['NEXUS_PASSWORD'] ?: "${NEXUS_PASSWORD}"
 }
 
 subprojects {
