@@ -1,7 +1,15 @@
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
         maven { url 'https://s3-eu-west-1.amazonaws.com/beekeeper-marketplace-sdk/maven2/release/' }
+        maven {
+            url 'https://nexus.internal.beekeeper.io/repository/beekeeper-maven-central/'
+            credentials {
+                username = System.env['NEXUS_USERNAME'] ?: "${NEXUS_USERNAME}"
+                password = System.env['NEXUS_PASSWORD'] ?: "${NEXUS_PASSWORD}"
+            }
+        }
     }
     dependencies {
         classpath "io.beekeeper:connector-plugin:${sdkVersion}"
@@ -12,6 +20,11 @@ buildscript {
 plugins {
     id 'io.franzbecker.gradle-lombok' version '5.0.0'
     id 'io.beekeeper.gradle.plugin' version '0.9.24'
+}
+
+ext {
+    nexusUsername = System.env['NEXUS_USERNAME'] ?: "${NEXUS_USERNAME}"
+    nexusPassword = System.env['NEXUS_PASSWORD'] ?: "${NEXUS_PASSWORD}"
 }
 
 subprojects {
@@ -25,9 +38,17 @@ subprojects {
     }
 
     repositories {
+        mavenLocal()
         mavenCentral()
         maven { url "https://clojars.org/repo" }
         maven { url 'https://s3-eu-west-1.amazonaws.com/beekeeper-marketplace-sdk/maven2/release/' }
+        maven {
+            url 'https://nexus.internal.beekeeper.io/repository/beekeeper-maven-central/'
+            credentials {
+                username = rootProject.ext.nexusUsername
+                password = rootProject.ext.nexusPassword
+            }
+        }
     }
 
     dependencyCheck {
