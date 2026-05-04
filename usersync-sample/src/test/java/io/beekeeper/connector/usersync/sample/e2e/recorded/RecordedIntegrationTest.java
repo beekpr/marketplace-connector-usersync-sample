@@ -29,6 +29,6 @@ public class RecordedIntegrationTest {
         assertThat(userUpdate.getLastName()).isEqualTo("thepooh");
         assertThat(userUpdate.getLogin()).isEqualTo("someid");
         assertThat(userUpdate.getPosition()).isEqualTo("teddybear");
-        assertThat(userUpdate.isSuspended()).isFalse();
+        assertThat(userUpdate.getSuspended()).isFalse();
     }
 }
