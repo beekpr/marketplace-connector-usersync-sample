@@ -4,13 +4,15 @@
     "id":"someid",
     "firstName":"winnie",
     "lastName":"thepooh",
-    "suspended":"false",
+    "email":"winnie@example.com",
+    "suspended":false,
     "position":"teddybear"
   }, {
     "id":"anotherid",
     "firstName":"frodo",
     "lastName":"baggins",
-    "suspended":"false",
+    "email":"frodo@example.com",
+    "suspended":false,
     "position":"hobbit"
   }]
 }
