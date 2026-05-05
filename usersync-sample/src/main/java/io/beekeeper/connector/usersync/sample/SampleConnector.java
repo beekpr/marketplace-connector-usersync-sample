@@ -12,7 +12,14 @@ import io.beekeeper.integration.connector.usersync.api.UserImportConfiguration;
 import io.beekeeper.integration.connector.usersync.api.UserImportConnector;
 import io.beekeeper.integration.connector.usersync.api.UserImportObserver;
 import io.beekeeper.integration.connector.usersync.api.UserImportResult;
+import io.beekeeper.integration.connector.usersync.api.data.UserData;
 
+import java.util.List;
+
+/**
+ * Main connector implementation for Sample API user synchronization.
+ * Orchestrates the user import flow with pagination support.
+ */
 public class SampleConnector implements UserImportConnector {
 
     private final ObjectMapper objectMapper;
@@ -36,8 +43,10 @@ public class SampleConnector implements UserImportConnector {
 
         SampleUserProvider userProvider = new SampleUserProvider(sampleImportConfiguration);
 
-        // All users have to be sent to the observer
-        observer.onNext(userProvider.fetchBatch());
+        List<UserData> batch;
+        while (!(batch = userProvider.fetchBatch()).isEmpty()) {
+            observer.onNext(batch);
+        }
 
         return new UserImportResult();
     }

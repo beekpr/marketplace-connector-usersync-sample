@@ -4,7 +4,14 @@ import io.beekeeper.directorySync.mapping.field.external.ExternalField;
 import io.beekeeper.directorySync.mapping.field.external.IExternalField;
 import io.beekeeper.integration.connector.usersync.api.ConnectorDefaultMapping;
 
+/**
+ * Default field mapping configuration for Sample connector.
+ * Defines how external API fields are mapped to Beekeeper user properties.
+ * This class handles field-level mapping configuration only;
+ * data transformation logic is in {@link SampleUserForBeekeeperMapping}.
+ */
 public class SampleDefaultMapping implements ConnectorDefaultMapping {
+
     @Override
     public IExternalField getExternalUserId() {
         return ExternalField.builder()
