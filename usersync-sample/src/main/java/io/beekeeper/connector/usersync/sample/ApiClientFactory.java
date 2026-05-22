@@ -12,6 +12,10 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Factory for building authenticated API clients for the API.
+ * Configures authentication, HTTP client, and Retrofit with Jackson serialization.
+ */
 @AllArgsConstructor
 public class ApiClientFactory {
     final String baseUrlString;

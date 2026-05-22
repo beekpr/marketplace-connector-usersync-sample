@@ -2,12 +2,12 @@
   "id" : "7265d21d-2722-4490-b9c8-7da219272b8d",
   "name" : "api_1_users",
   "request" : {
-    "url" : "/api/1/users",
+    "urlPath" : "/api/1/users",
     "method" : "GET"
   },
   "response" : {
     "status" : 200,
-    "base64Body" : "ewogICJjb250ZW50IjogWwogICAgewogICAgImlkIjoic29tZWlkIiwKICAgICJmaXJzdE5hbWUiOiJ3aW5uaWUiLAogICAgImxhc3ROYW1lIjoidGhlcG9vaCIsCiAgICAic3VzcGVuZGVkIjoiZmFsc2UiLAogICAgInBvc2l0aW9uIjoidGVkZHliZWFyIgogIH0sIHsKICAgICJpZCI6ImFub3RoZXJpZCIsCiAgICAiZmlyc3ROYW1lIjoiZnJvZG8iLAogICAgImxhc3ROYW1lIjoiYmFnZ2lucyIsCiAgICAic3VzcGVuZGVkIjoiZmFsc2UiLAogICAgInBvc2l0aW9uIjoiaG9iYml0IgogIH1dCn0=",
+    "base64Body" : "ewogICJjb250ZW50IjogWwogICAgewogICAgImlkIjoic29tZWlkIiwKICAgICJmaXJzdE5hbWUiOiJ3aW5uaWUiLAogICAgImxhc3ROYW1lIjoidGhlcG9vaCIsCiAgICAiZW1haWwiOiJ3aW5uaWVAZXhhbXBsZS5jb20iLAogICAgInN1c3BlbmRlZCI6ZmFsc2UsCiAgICAicG9zaXRpb24iOiJ0ZWRkeWJlYXIiCiAgfSwgewogICAgImlkIjoiYW5vdGhlcmlkIiwKICAgICJmaXJzdE5hbWUiOiJmcm9kbyIsCiAgICAibGFzdE5hbWUiOiJiYWdnaW5zIiwKICAgICJlbWFpbCI6ImZyb2RvQGV4YW1wbGUuY29tIiwKICAgICJzdXNwZW5kZWQiOmZhbHNlLAogICAgInBvc2l0aW9uIjoiaG9iYml0IgogIH1dCn0K",
     "headers" : {
       "Matched-Stub-Id" : "c8dc5107-80bb-4848-900b-296b7e3f5345",
       "Vary" : "Accept-Encoding, User-Agent",
